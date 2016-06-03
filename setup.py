@@ -7,7 +7,7 @@ __date__ = "$Date: 2011-08-14 14:01:04 +0200 (So, 14. Aug 2011) $"
 from sys import version_info
 
 py_version = version_info[:2]
-if not (2, 3) <= py_version < (3, 0):
+if not (2, 3) <= py_version < (3, 99):
     raise ImportError('Python %d.%d is not supported by DBUtils.' % py_version)
 
 import warnings
@@ -66,5 +66,6 @@ DB-API 2 compliant database interfaces and the classic PyGreSQL interface.
     license='Open Software License',
     packages=['DBUtils', 'DBUtils.Examples', 'DBUtils.Tests'],
     package_data={'DBUtils': ['Docs/*']},
-    zip_safe=0
+    zip_safe=0,
+    use_2to3 = True
 )
